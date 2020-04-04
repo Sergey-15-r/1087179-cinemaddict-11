@@ -1,7 +1,7 @@
 # Личный проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Сергей Аликов](https://up.htmlacademy.ru/ecmascript/11/user/1087179).
-* Наставник: `Неизвестно`.
+* Наставник: [Виталий Комолаев] (https://htmlacademy.ru/profile/id1274335).
 
 ---
 
