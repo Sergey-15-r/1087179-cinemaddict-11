@@ -405,15 +405,26 @@ const createDetailedInformation = () => {
   );
 };
 
+const createMoviesInside = () => {
+  return (
+`<section class="footer__statistics">
+    <p>130 291 movies inside</p>
+  </section>`
+  );
+};
 
 const headerContainer = document.querySelector(`.header`);
 const mainContainer = document.querySelector(`.main`);
+const footerContainer = document.querySelector(`.footer`);
 
-render(headerContainer, createProfileRate());
-render(mainContainer, createMainMenu());
-render(mainContainer, createSort());
-render(mainContainer, createFilmsList());
-render(mainContainer, createButtonShowMore());
-render(mainContainer, createBlockTopRated());
-render(mainContainer, createBlockMostCommented());
-render(mainContainer, createStatistic());
+render(headerContainer, createProfileRate(), `beforeend`);
+render(mainContainer, createMainMenu(), `beforeend`);
+render(mainContainer, createSort(),`beforeend`);
+render(mainContainer, createFilmsList(), `beforeend`);
+render(mainContainer, createButtonShowMore(), `beforeend`);
+render(mainContainer, createBlockTopRated() ,`beforeend`);
+render(mainContainer, createBlockMostCommented(), `beforeend`);
+render(footerContainer,createMoviesInside(), `beforeend`);
+
+
+
