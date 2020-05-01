@@ -1,4 +1,5 @@
 "use strict";
+const CARD_COUNT = 5;
 
 const render = (container, template, place = beforeend) => {
   container.insertAdjacentHTML(place, template);
@@ -285,6 +286,8 @@ const createMoviesInside = () => {
   );
 };
 
+
+
 const headerContainer = document.querySelector(`.header`);
 const mainContainer = document.querySelector(`.main`);
 const footerContainer = document.querySelector(`.footer`);
@@ -295,5 +298,8 @@ render(mainContainer, createSort(), `beforeend`);
 render(mainContainer, createFilms(), `beforeend`);
 render(footerContainer, createMoviesInside(), `beforeend`);
 
+const filmsContainer = mainContainer.querySelector(`.films-list__container`);
 
-
+for (let i = 0; i < CARD_COUNT; i++) {
+  render(filmsContainer, createFilms(), `beforeend`);
+}
