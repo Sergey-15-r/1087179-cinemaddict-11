@@ -1,7 +1,7 @@
 "use strict";
 const CARDS_COUNT = 5;
 
-const render = (container, template, place = beforeend) => {
+const render = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
 };
 
@@ -35,57 +35,6 @@ const createSort = () => {
 <li><a href="#" class="sort__button">Sort by date</a></li>
 <li><a href="#" class="sort__button">Sort by rating</a></li>
 </ul>`
-  );
-};
-
-const createStatistic = () => {
-  return (
-    `<section class="statistic">
-<p class="statistic__rank">
-Your rank
-<img class="statistic__img" src="images/bitmap@2x.png" alt="Avatar" width="35" height="35">
-<span class="statistic__rank-label">Sci-Fighter</span>
-</p>
-
-<form action="https://echo.htmlacademy.ru/" method="get" class="statistic__filters">
-<p class="statistic__filters-description">Show stats:</p>
-
-<input type="radio" class="statistic__filters-input visually-hidden" name="statistic-filter" id="statistic-all-time" value="all-time" checked>
-<label for="statistic-all-time" class="statistic__filters-label">All time</label>
-
-<input type="radio" class="statistic__filters-input visually-hidden" name="statistic-filter" id="statistic-today" value="today">
-<label for="statistic-today" class="statistic__filters-label">Today</label>
-
-<input type="radio" class="statistic__filters-input visually-hidden" name="statistic-filter" id="statistic-week" value="week">
-<label for="statistic-week" class="statistic__filters-label">Week</label>
-
-<input type="radio" class="statistic__filters-input visually-hidden" name="statistic-filter" id="statistic-month" value="month">
-<label for="statistic-month" class="statistic__filters-label">Month</label>
-
-<input type="radio" class="statistic__filters-input visually-hidden" name="statistic-filter" id="statistic-year" value="year">
-<label for="statistic-year" class="statistic__filters-label">Year</label>
-</form>
-
-<ul class="statistic__text-list">
-<li class="statistic__text-item">
-<h4 class="statistic__item-title">You watched</h4>
-<p class="statistic__item-text">22 <span class="statistic__item-description">movies</span></p>
-</li>
-<li class="statistic__text-item">
-<h4 class="statistic__item-title">Total duration</h4>
-<p class="statistic__item-text">130 <span class="statistic__item-description">h</span> 22 <span class="statistic__item-description">m</span></p>
-</li>
-<li class="statistic__text-item">
-<h4 class="statistic__item-title">Top genre</h4>
-<p class="statistic__item-text">Sci-Fi</p>
-</li>
-</ul>
-
-<div class="statistic__chart-wrap">
-<canvas class="statistic__chart" width="1000"></canvas>
-</div>
-
-</section> `
   );
 };
 
@@ -207,80 +156,8 @@ const createCardTemplate = () => {
   <button class="film-card__controls-item button film-card__controls-item--mark-as-watched">Mark as watched</button>
   <button class="film-card__controls-item button film-card__controls-item--favorite">Mark as favorite</button>
 </form>
-</article>
-
-<article class="film-card">
-<h3 class="film-card__title">Sagebrush Trail</h3>
-<p class="film-card__rating">3.2</p>
-<p class="film-card__info">
-  <span class="film-card__year">1933</span>
-  <span class="film-card__duration">54m</span>
-  <span class="film-card__genre">Western</span>
-</p>
-<img src="./images/posters/sagebrush-trail.jpg" alt="" class="film-card__poster">
-<p class="film-card__description">Sentenced for a murder he did not commit, John Brant escapes from prison determined to find the real killer. By chance Brant's narrow escap…</p>
-<a class="film-card__comments">89 comments</a>
-<form class="film-card__controls">
-  <button class="film-card__controls-item button film-card__controls-item--add-to-watchlist film-card__controls-item--active">Add to watchlist</button>
-  <button class="film-card__controls-item button film-card__controls-item--mark-as-watched">Mark as watched</button>
-  <button class="film-card__controls-item button film-card__controls-item--favorite">Mark as favorite</button>
-</form>
-</article>
-
-<article class="film-card">
-<h3 class="film-card__title">The Man with the Golden Arm</h3>
-<p class="film-card__rating">9.0</p>
-<p class="film-card__info">
-  <span class="film-card__year">1955</span>
-  <span class="film-card__duration">1h 59m</span>
-  <span class="film-card__genre">Drama</span>
-</p>
-<img src="./images/posters/the-man-with-the-golden-arm.jpg" alt="" class="film-card__poster">
-<p class="film-card__description">Frankie Machine (Frank Sinatra) is released from the federal Narcotic Farm in Lexington, Kentucky with a set of drums and a new outlook on…</p>
-<a class="film-card__comments">18 comments</a>
-<form class="film-card__controls">
-  <button class="film-card__controls-item button film-card__controls-item--add-to-watchlist">Add to watchlist</button>
-  <button class="film-card__controls-item button film-card__controls-item--mark-as-watched film-card__controls-item--active">Mark as watched</button>
-  <button class="film-card__controls-item button film-card__controls-item--favorite">Mark as favorite</button>
-</form>
-</article>
-
-<article class="film-card">
-<h3 class="film-card__title">Santa Claus Conquers the Martians</h3>
-<p class="film-card__rating">2.3</p>
-<p class="film-card__info">
-  <span class="film-card__year">1964</span>
-  <span class="film-card__duration">1h 21m</span>
-  <span class="film-card__genre">Comedy</span>
-</p>
-<img src="./images/posters/santa-claus-conquers-the-martians.jpg" alt="" class="film-card__poster">
-<p class="film-card__description">The Martians Momar ("Mom Martian") and Kimar ("King Martian") are worried that their children Girmar ("Girl Martian") and Bomar ("Boy Marti…</p>
-<a class="film-card__comments">465 comments</a>
-<form class="film-card__controls">
-  <button class="film-card__controls-item button film-card__controls-item--add-to-watchlist">Add to watchlist</button>
-  <button class="film-card__controls-item button film-card__controls-item--mark-as-watched">Mark as watched</button>
-  <button class="film-card__controls-item button film-card__controls-item--favorite film-card__controls-item--active">Mark as favorite</button>
-</form>
-</article>
-
-<article class="film-card">
-<h3 class="film-card__title">Popeye the Sailor Meets Sindbad the Sailor</h3>
-<p class="film-card__rating">6.3</p>
-<p class="film-card__info">
-  <span class="film-card__year">1936</span>
-  <span class="film-card__duration">16m</span>
-  <span class="film-card__genre">Cartoon</span>
-</p>
-<img src="./images/posters/popeye-meets-sinbad.png" alt="" class="film-card__poster">
-<p class="film-card__description">In this short, Sindbad the Sailor (presumably Bluto playing a "role") proclaims himself, in song, to be the greatest sailor, adventurer and…</p>
-<a class="film-card__comments">0 comments</a>
-<form class="film-card__controls">
-  <button class="film-card__controls-item button film-card__controls-item--add-to-watchlist film-card__controls-item--active">Add to watchlist</button>
-  <button class="film-card__controls-item button film-card__controls-item--mark-as-watched film-card__controls-item--active">Mark as watched</button>
-  <button class="film-card__controls-item button film-card__controls-item--favorite film-card__controls-item--active">Mark as favorite</button>
-</form>
 </article>`
-);
+  );
 };
 
 
@@ -291,8 +168,6 @@ const createMoviesInside = () => {
   </section>`
   );
 };
-
-
 
 const headerContainer = document.querySelector(`.header`);
 const mainContainer = document.querySelector(`.main`);
@@ -308,6 +183,5 @@ render(footerContainer, createMoviesInside(), `beforeend`);
 const filmsContainer = document.querySelector(`.films-list__container`);
 
 for (let i = 0; i < CARDS_COUNT; i++) {
-
-render(filmsContainer, createCardTemplate());
+  render(filmsContainer, createCardTemplate());
 }
